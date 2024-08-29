@@ -37,7 +37,6 @@ const ProductList = () => {
                 <li key={product.id} className="product-list-item">
                     <span>{product.name} - ${product.price}</span>
 
-                    //  add the data to the cart and send the data directly in store.js using useDispatch hook
                     <button
                         className={`add-to-cart-btn ${disabledProducts.includes(product.id) ? 'disabled' : ''}`}
                          onClick={ () => handleAddToCart(product) }
