@@ -10,7 +10,7 @@ import { addItemToCart }  from "./CartSlice.jsx";
 const ProductList = () => {
 
     const dispatch = useDispatch();
-    const [ disabledProducts, setDisabledProducts ] = useState([]); // State to store disabled products
+    const [ disabledProducts, setDisabledProducts ] = useState( [ ]); // State to store disabled products
 
     // Array of products
   const products = [
@@ -21,9 +21,10 @@ const ProductList = () => {
 
     // Function to handle adding a product to the cart
     const handleAddToCart = (product) => {
-      dispatch(addItemToCart(product)); // Dispatching the action to add the product to the cart
+        dispatch(addItemToCart(product)); // Dispatching the action to add the product to the cart
         setDisabledProducts([...disabledProducts, product.id]); // Mark the product as disabled
     };
+
 
   return (
     <div className="product-list">
@@ -50,7 +51,11 @@ const ProductList = () => {
       </ul>
 
     </div>
+
+
+
   );
 };
+
 
 export default ProductList;

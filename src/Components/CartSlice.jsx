@@ -3,7 +3,9 @@ import { createSlice } from '@reduxjs/toolkit';
 // initialising a state for the cart items in the store
 const initialState = {
     cartItems: [],
-}
+    disabledProducts: [],
+    superCoins : 0,
+};
 
 const CartSlice = createSlice({
 
@@ -40,6 +42,7 @@ const CartSlice = createSlice({
         //  This reducer function handles the action of clearing the entire cart.
         clearCart(state) {
             state.cartItems = [];
+            state.disabledProducts = [];
         },
 
         // This reducer function handles the action of increasing the quantity of a specific item in the cart.
